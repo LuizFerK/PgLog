@@ -8,6 +8,7 @@ const jsToPgType = {
 async function populate(client) {
     // Lê o arquivo .json
   const metadataText = await fs.readFile('assets/metadata.json', { encoding: 'utf8' })
+  console.log(metadataText)
   const metadata = JSON.parse(metadataText)
     const tableName = Object.keys(metadata)[0]
 
