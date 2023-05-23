@@ -27,7 +27,7 @@ async function redoUndo(client, tableName) {
         await client.query(`UPDATE ${tableName} SET ${c} = ${nv} WHERE id = ${id};`)
       }
     } else {
-      for (const [t, id, c, ov, nv] of v.queries) {
+      for (const [t, id, c, ov, nv] of v.queries.reverse()) {
         await client.query(`UPDATE ${tableName} SET ${c} = ${ov} WHERE id = ${id};`)
       }
     }
